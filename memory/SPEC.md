@@ -12,6 +12,7 @@ Landing page pública em português para o trabalho de psicomotricidade infantil
 - O contato usa o link público `wa.me` para o número +55 (11) 99541-5005, com mensagem pré-preenchida e revisão manual no WhatsApp.
 - As imagens principais usam as duas fotos autorais publicadas no site Wix de referência.
 - A área de histórias reais está preparada, mas o site de referência não publica depoimentos de famílias; nenhum relato foi inventado.
+- A comunicação deve diferenciar psicomotricidade clínica — técnica, avaliativa e individualizada — de recursos lúdicos que podem ser usados quando forem adequados ao objetivo terapêutico.
 
 ## Fluxos principais
 

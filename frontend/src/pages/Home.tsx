@@ -72,8 +72,8 @@ const approachItems = [
   },
   {
     icon: Brain,
-    title: "Aprender brincando",
-    text: "A ludicidade transforma desafios em convites para explorar, tentar de novo e celebrar pequenas conquistas.",
+    title: "Intervenção com sentido",
+    text: "Atividades estruturadas e recursos adequados transformam objetivos clínicos em experiências compreensíveis para cada criança.",
   },
   {
     icon: HeartHandshake,
@@ -98,7 +98,7 @@ const faqs = [
   {
     question: "Como funciona a primeira sessão?",
     answer:
-      "Começamos com uma conversa com a família para conhecer a rotina, os interesses e os objetivos. A partir daí, o movimento e a brincadeira ajudam a observar e construir os próximos passos.",
+      "Começamos com uma conversa com a família para conhecer a rotina, o histórico e os objetivos. A avaliação e a observação orientada ajudam a construir os próximos passos do acompanhamento.",
   },
   {
     question: "Você atende crianças com TEA?",
@@ -108,7 +108,7 @@ const faqs = [
   {
     question: "O que levar para a sessão?",
     answer:
-      "Roupas confortáveis e vontade de brincar já são um ótimo começo. No contato inicial, combinamos os detalhes do espaço e do atendimento.",
+      "Roupas confortáveis e disponibilidade para participar já são um ótimo começo. No contato inicial, combinamos os detalhes do espaço e do atendimento.",
   },
 ];
 
@@ -188,10 +188,10 @@ export default function Home() {
               Psicomotricidade infantil e juvenil
             </div>
             <h1 data-testid="hero-title" className="max-w-[680px] font-heading text-5xl font-extrabold leading-[1.02] tracking-[-0.065em] text-[#1e293b] sm:text-6xl lg:text-[4.65rem]">
-              Desenvolvimento que acontece <span className="relative whitespace-nowrap text-[#2d6a4f]">brincando.<span className="scribble-line" /></span>
+              Desenvolvimento guiado por <span className="relative whitespace-nowrap text-[#2d6a4f]">ciência e movimento.<span className="scribble-line" /></span>
             </h1>
             <p data-testid="hero-description" className="mt-7 max-w-xl text-lg leading-relaxed text-[#64748b] sm:text-xl">
-              Movimento, vínculo e ludicidade para apoiar cada criança a descobrir novas possibilidades — no seu ritmo e do seu jeito.
+              Avaliação e intervenção psicomotora para apoiar cada criança em seu desenvolvimento motor e emocional — com técnica, vínculo e respeito ao seu ritmo.
             </p>
             <div data-testid="hero-actions" className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
               <a data-testid="hero-whatsapp-button" href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className={cn(buttonVariants({ size: "lg" }), "group gap-2 rounded-full bg-[#2d6a4f] px-6 text-white shadow-[0_16px_30px_-16px_#2d6a4f] hover:bg-[#24583f]") }>
@@ -217,7 +217,7 @@ export default function Home() {
             </div>
             <div data-testid="hero-floating-note" className="float-slow absolute -bottom-5 left-3 flex max-w-[230px] items-center gap-3 rounded-2xl border border-white/90 bg-white/90 px-4 py-3 shadow-[0_18px_40px_-20px_rgba(30,41,59,0.5)] backdrop-blur-md sm:-left-8">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#fff0df] text-[#e07a5f]"><HeartHandshake size={20} /></span>
-              <p data-testid="hero-floating-note-text" className="text-xs font-bold leading-snug text-[#1e293b]">Cada conquista começa com um pequeno passo.</p>
+              <p data-testid="hero-floating-note-text" className="text-xs font-bold leading-snug text-[#1e293b]">Cada conquista começa com um acompanhamento individualizado.</p>
             </div>
           </motion.div>
         </section>
@@ -246,7 +246,7 @@ export default function Home() {
             <p data-testid="about-kicker" className="section-kicker">Sobre o profissional</p>
             <h2 data-testid="about-title" className="section-title mt-4">Um olhar técnico, humano e cheio de possibilidades.</h2>
             <p data-testid="about-text-primary" className="mt-6 text-base leading-relaxed text-[#64748b] sm:text-lg">Sou <strong className="text-[#1e293b]">Vinicius Corrêa Tafarelo</strong>, professor de Educação Física e especialista em Psicomotricidade. Desde 2010, acompanho crianças e adolescentes em experiências que conectam corpo, emoção e aprendizagem.</p>
-            <p data-testid="about-text-secondary" className="mt-4 text-base leading-relaxed text-[#64748b] sm:text-lg">Meu trabalho acontece pela ludicidade: a atividade física vira uma linguagem para a criança se expressar, ganhar autonomia e encontrar prazer em cada nova descoberta.</p>
+            <p data-testid="about-text-secondary" className="mt-4 text-base leading-relaxed text-[#64748b] sm:text-lg">Meu trabalho combina avaliação, intervenção psicomotora e atividades significativas para a criança se expressar, ganhar autonomia e avançar em cada objetivo definido.</p>
             <div data-testid="about-credentials-list" className="mt-8 grid gap-3 sm:grid-cols-2">
               <div data-testid="about-credential-registration" className="flex items-center gap-3 rounded-xl bg-[#f2f8f3] p-3 text-sm font-semibold text-[#2d6a4f]"><span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-[#52b788]"><Check size={16} /></span> CREF 091220-G/SP</div>
               <div data-testid="about-credential-aba" className="flex items-center gap-3 rounded-xl bg-[#fff5ea] p-3 text-sm font-semibold text-[#9a5a36]"><span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-[#e07a5f]"><Check size={16} /></span> Especialista em ABA</div>
@@ -280,7 +280,7 @@ export default function Home() {
 
         <motion.section {...fadeUp} id="abordagem" data-testid="approach-section" className="mx-auto max-w-7xl px-5 py-24 lg:px-10 lg:py-32">
           <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
-            <div><p data-testid="approach-kicker" className="section-kicker">A abordagem</p><h2 data-testid="approach-title" className="section-title mt-4">Cada brincadeira tem um propósito.</h2><p data-testid="approach-description" className="mt-6 text-base leading-relaxed text-[#64748b] sm:text-lg">Psicomotricidade é aprender com o corpo inteiro. Criamos situações lúdicas para desenvolver habilidades motoras, ampliar a autonomia e fortalecer a confiança.</p><a data-testid="approach-whatsapp-link" href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-2 text-sm font-extrabold text-[#2d6a4f] transition-colors duration-300 hover:text-[#e07a5f]">Tire suas dúvidas <ArrowUpRight size={17} /></a></div>
+            <div><p data-testid="approach-kicker" className="section-kicker">A abordagem</p><h2 data-testid="approach-title" className="section-title mt-4">Cada intervenção tem um propósito.</h2><p data-testid="approach-description" className="mt-6 text-base leading-relaxed text-[#64748b] sm:text-lg">A psicomotricidade clínica é um trabalho técnico e individualizado. Avaliamos necessidades, definimos objetivos e selecionamos recursos adequados para favorecer o desenvolvimento motor, emocional e funcional.</p><a data-testid="approach-whatsapp-link" href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-2 text-sm font-extrabold text-[#2d6a4f] transition-colors duration-300 hover:text-[#e07a5f]">Tire suas dúvidas <ArrowUpRight size={17} /></a></div>
             <div data-testid="approach-list" className="grid gap-4">
               {approachItems.map(({ icon: Icon, title, text }, index) => <div data-testid={`approach-item-${index}`} key={title} className="group flex gap-5 rounded-2xl border border-[#e1ebe3] bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#b9d8c0] hover:shadow-[0_20px_40px_-28px_rgba(45,106,79,0.6)]"><span data-testid={`approach-icon-${index}`} className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#f2f8f3] text-[#2d6a4f] transition-colors duration-300 group-hover:bg-[#2d6a4f] group-hover:text-white"><Icon size={23} /></span><div><h3 data-testid={`approach-item-title-${index}`} className="font-heading text-lg font-bold text-[#1e293b]">{title}</h3><p data-testid={`approach-item-text-${index}`} className="mt-1 text-sm leading-relaxed text-[#64748b]">{text}</p></div></div>)}
             </div>
@@ -321,7 +321,7 @@ export default function Home() {
         <motion.section {...fadeUp} id="contato" data-testid="contact-section" className="relative overflow-hidden bg-[#2d6a4f] px-5 py-20 text-white lg:px-10 lg:py-24">
           <div className="absolute -right-24 -top-32 h-80 w-80 rounded-full border-[44px] border-white/10" /><div className="absolute -bottom-28 left-1/4 h-64 w-64 rounded-full bg-[#52b788]/25 blur-3xl" />
           <div className="relative mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
-            <div><p data-testid="contact-kicker" className="text-xs font-bold uppercase tracking-[0.2em] text-[#a9dfb8]">Vamos conversar?</p><h2 data-testid="contact-title" className="mt-4 max-w-2xl font-heading text-4xl font-extrabold leading-tight tracking-[-0.055em] sm:text-5xl">Toda grande descoberta começa com espaço para brincar.</h2><p data-testid="contact-description" className="mt-5 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">Conte um pouco sobre o que você está buscando. O primeiro passo pode ser uma conversa leve, sem compromisso.</p></div>
+            <div><p data-testid="contact-kicker" className="text-xs font-bold uppercase tracking-[0.2em] text-[#a9dfb8]">Vamos conversar?</p><h2 data-testid="contact-title" className="mt-4 max-w-2xl font-heading text-4xl font-extrabold leading-tight tracking-[-0.055em] sm:text-5xl">Desenvolvimento exige escuta, técnica e parceria.</h2><p data-testid="contact-description" className="mt-5 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">Conte um pouco sobre o que você está buscando. O primeiro passo pode ser uma conversa clara, cuidadosa e sem compromisso.</p></div>
             <div data-testid="contact-card" className="rounded-[26px] border border-white/15 bg-white/10 p-6 backdrop-blur-md sm:p-7"><div data-testid="contact-location" className="flex gap-3 border-b border-white/15 pb-5"><MapPin className="mt-0.5 shrink-0 text-[#ffcf53]" size={20} /><div><p data-testid="contact-location-label" className="text-xs font-bold uppercase tracking-[0.14em] text-white/55">Atendimento</p><p data-testid="contact-location-value" className="mt-1 font-semibold">Jundiaí e região · São Paulo</p></div></div><div data-testid="contact-directions" className="flex gap-3 border-b border-white/15 py-5"><Compass className="mt-0.5 shrink-0 text-[#a9dfb8]" size={20} /><div><p data-testid="contact-directions-label" className="text-xs font-bold uppercase tracking-[0.14em] text-white/55">Orientações</p><p data-testid="contact-directions-value" className="mt-1 text-sm leading-relaxed text-white/75">Confirme pelo WhatsApp o local disponível e as orientações antes de vir.</p></div></div><div data-testid="contact-phone" className="flex gap-3 py-5"><MessageCircle className="mt-0.5 shrink-0 text-[#6bea91]" size={20} /><div><p data-testid="contact-phone-label" className="text-xs font-bold uppercase tracking-[0.14em] text-white/55">WhatsApp</p><p data-testid="contact-phone-value" className="mt-1 font-semibold">{whatsappDisplayPhone}</p></div></div><a data-testid="contact-whatsapp-button" href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className={cn(buttonVariants({ size: "lg" }), "w-full gap-2 rounded-full bg-[#25d366] text-[#0c3b25] hover:bg-[#6bea91]")}>Quero agendar uma conversa <ArrowUpRight size={18} /></a></div>
           </div>
         </motion.section>

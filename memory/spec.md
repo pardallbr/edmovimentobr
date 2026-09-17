@@ -8,3 +8,4 @@ Landing page pública em pt-BR para psicomotricidade infantil e juvenil em Jundi
 - As imagens hero e Sobre vêm das fotos publicadas no Wix de referência.
 - O Wix consultado não contém depoimentos de famílias; a página sinaliza o espaço para relatos autorizados sem fabricar avaliações.
 - A localização pública é apenas Jundiaí e região; o visitante confirma local e orientações pelo WhatsApp.
+- A linguagem clínica da página usa avaliação, intervenção e acompanhamento técnico; ludicidade não é apresentada como sinônimo de psicomotricidade clínica.
