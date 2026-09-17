@@ -1,0 +1,114 @@
+{
+  "project_title": "EdMovimento - Educação do Movimento & Psicomotricidade Infanto-Juvenil",
+  "app_type": "landing_page",
+  "locale": "pt-BR",
+  "professional_info": {
+    "name": "Vinicius Corrêa Tafarelo",
+    "title": "Professor de Educação Física & Especialista em Psicomotricidade",
+    "cref": "091220-G/SP",
+    "cnpj": "26.793.271/0001-35",
+    "location": "Jundiaí - SP",
+    "whatsapp_number": "+55 11 99541-5005",
+    "whatsapp_link": "https://wa.me/5511995415005?text=Ol%C3%A1%21%20Gostaria%20de%20saber%20mais%20sobre%20as%20sess%C3%B5es%20de%20Psicomotricidade%20para%20meu%20filho%28a%29."
+  },
+  "emotional_tone": "Warm, reassuring, playful yet clinical authority, family-oriented, accessible and empowering for parents.",
+  "color_palette": {
+    "archetype": "Organic & Playful Nurture (Sage Green + Honey Warmth + Terracotta Accent)",
+    "primary": {
+      "forest_sage": "#2D6A4F",
+      "mint_green": "#52B788",
+      "soft_sage_bg": "#F4F9F5"
+    },
+    "secondary": {
+      "sunshine_amber": "#FFB703",
+      "warm_peach": "#FFE8D6",
+      "terracotta": "#E07A5F"
+    },
+    "whatsapp": {
+      "brand_green": "#25D366",
+      "hover_green": "#1EAE52"
+    },
+    "neutral": {
+      "deep_charcoal": "#1E293B",
+      "muted_slate": "#64748B",
+      "warm_offwhite": "#FAFAF9",
+      "pure_white": "#FFFFFF"
+    }
+  },
+  "typography": {
+    "heading_font": "Plus Jakarta Sans / Outfit (Soft Geometric Sans, bold, friendly, non-corporate)",
+    "body_font": "DM Sans / Inter (Clean, readable for parents on mobile)",
+    "sizes": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight",
+      "h3": "text-xl sm:text-2xl font-semibold",
+      "body": "text-base sm:text-lg leading-relaxed text-slate-700"
+    }
+  },
+  "layout_and_sections": [
+    {
+      "section_id": "header",
+      "name": "Navegação Acolhedora & Bar de Contato",
+      "description": "Header fixo com efeito glassmorphism (backdrop-blur-md bg-white/80), logo EdMovimento, links rápidos (Sobre, Especialidades, Abordagem, Contato) e botão de destaque para WhatsApp."
+    },
+    {
+      "section_id": "hero",
+      "name": "Hero Section - A Vida em Movimento",
+      "description": "Apresentação de alto impacto emocional para mães e pais em Jundiaí e região. Título 'Desenvolvimento Motor e Emocional Através da Ludicidade', imagem calorosa de criança em atividade lúdica, selos de garantia profissional (CREF, Especialista Pós-Graduado) e CTA principal 'Agendar Avaliação via WhatsApp'."
+    },
+    {
+      "section_id": "trust_badges",
+      "name": "Selo de Confiança & Números",
+      "description": "Estatísticas em destaque: +5 Pós-Graduações completas (500h a 780h), Especialização ABA Autismo & TEA, Atendimento em Jundiaí e região, Metodologia Brivio."
+    },
+    {
+      "section_id": "about",
+      "name": "Sobre o Prof. Vinicius Corrêa Tafarelo",
+      "description": "Apresentação humanizada e técnica do profissional com foto profissional em consultório/espaço de atendimento, histórico desde a graduação na ESEFJ (2010), registro no CREF e visão pedagógica/lúdica."
+    },
+    {
+      "section_id": "specialties",
+      "name": "Especializações & Qualificações Acadêmicas",
+      "description": "Cards estilo bento grid listando as 5 pós-graduações principais: 1. Educação Física e Psicomotricidade (500h), 2. Psicomotricidade (720h), 3. Neuropsicomotricidade (720h), 4. Psicomotricidade Institucional, Clínica e TGD/TEA (720h), 5. ABA - Análise Comportamental Aplicada ao Autismo (780h), mais Mentoria Rodrigo Brivio e dezenas de certificações em estimulação precoce e praxia."
+    },
+    {
+      "section_id": "methodology",
+      "name": "Nossa Abordagem e Método Lúdico",
+      "description": "Explicação interativa de como funciona a psicomotricidade no dia a dia: Praxia Fina e Ampla, Esquema Corporal, Lateralidade, Orientação Espaço-Temporal e Integração Sensorial no Autismo (TEA) e Síndrome de Down."
+    },
+    {
+      "section_id": "checklist_quiz",
+      "name": "Ferramenta Interativa: 'Sinais de Atenção no Desenvolvimento Motor'",
+      "description": "Widget interativo não-diagnóstico para pais marcarem os pontos que percebem no filho (ex: dificuldades de equilíbrio, coordenação motora fina, foco nas brincadeiras, agitação ou atraso na fala) que sugere direcionamento e botão direto 'Conversar pelo WhatsApp sobre estes sinais'."
+    },
+    {
+      "section_id": "contact_booking",
+      "name": "Contato & Agendamento Simplificado",
+      "description": "Formulário amigável para contato prévio + envio direto formatado para o WhatsApp + Mapa/Info de atendimento em Jundiaí-SP."
+    },
+    {
+      "section_id": "faq",
+      "name": "Perguntas Frequentes dos Pais",
+      "description": "Accordion do Shadcn/UI respondendo dúvidas comuns: Qual a idade recomendada? Como funciona a primeira sessão? Atende crianças com TEA/Autismo? O que levar para a sessão?"
+    },
+    {
+      "section_id": "floating_whatsapp",
+      "name": "Botão Flutuante do WhatsApp",
+      "description": "Botão fixo no canto inferior direito com pulso discreto e tooltip 'Fale diretamente com o Prof. Vinicius'."
+    }
+  ],
+  "curated_image_urls": {
+    "hero_child_play": "https://images.unsplash.com/photo-1629862403793-332f8c1ceb0c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNzl8MHwxfHNlYXJjaHwzfHxjaGlsZCUyMHRoZXJhcHklMjBleGVyY2lzZSUyMGJhbGFuY2UlMjBwbGF5JTIwaGFwcHl8ZW58MHx8fHwxNzg5NjA2Nzk3fDA&ixlib=rb-4.1.0&q=85",
+    "child_jumping_balance": "https://images.unsplash.com/photo-1611596534346-94839c5622ab?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNzl8MHwxfHNlYXJjaHw0fHxjaGlsZCUyMHRoZXJhcHklMjBleGVyY2lzZSUyMGJhbGFuY2UlMjBwbGF5JTIwaGFwcHl8ZW58MHx8fHwxNzg5NjA2Nzk3fDA&ixlib=rb-4.1.0&q=85",
+    "blocks_play_therapy": "https://images.unsplash.com/photo-1575364289437-fb1479d52732?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNzl8MHwxfHNlYXJjaHwzfHxjaGlsZCUyMHBsYXklMjB0aGVyYXB5JTIwbW92ZW1lbnQlMjBjb2xvcmZ1bCUyMGJsb2NrfGVufDB8fHx8MTc4OTYwNjc5MHww&ixlib=rb-4.1.0&q=85",
+    "therapist_smiling_room": "https://images.pexels.com/photos/16873404/pexels-photo-16873404.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "child_autism_awareness": "https://images.pexels.com/photos/8385983/pexels-photo-8385983.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "rocking_balance_play": "https://images.unsplash.com/photo-1685362158423-abf004b858d2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNzl8MHwxfHNlYXJjaHwyfHxjaGlsZCUyMHRoZXJhcHklMjBleGVyY2lzZSUyMGJhbGFuY2UlMjBwbGF5JTIwaGFwcHl8ZW58MHx8fHwxNzg5NjA2Nzk3fDA&ixlib=rb-4.1.0&q=85"
+  },
+  "instructions_to_main_agent": {
+    "testing_requirement": "Every interactive and key element MUST include a data-testid attribute (e.g. data-testid='whatsapp-hero-button', data-testid='contact-submit-button', data-testid='quiz-option-0').",
+    "language": "All public interface copy must be in clear, warm, empathetic Brazilian Portuguese.",
+    "links": "Ensure all WhatsApp links open in a new tab (_blank) and use the exact number +55 11 99541-5005 with wa.me link format.",
+    "motion": "Use smooth motion animations (framer-motion / motion library) for section entrances and micro-interactions on cards."
+  }
+}
