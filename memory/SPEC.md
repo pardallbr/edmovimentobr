@@ -10,6 +10,8 @@ Landing page pública em português para o trabalho de psicomotricidade infantil
 - Conteúdo institucional, formação, abordagem, FAQ e checklist de observação ficam no frontend.
 - O checklist é local ao navegador e nunca envia dados para o backend.
 - O contato usa o link público `wa.me` para o número +55 (11) 99541-5005, com mensagem pré-preenchida e revisão manual no WhatsApp.
+- As imagens principais usam as duas fotos autorais publicadas no site Wix de referência.
+- A área de histórias reais está preparada, mas o site de referência não publica depoimentos de famílias; nenhum relato foi inventado.
 
 ## Fluxos principais
 
@@ -17,6 +19,7 @@ Landing page pública em português para o trabalho de psicomotricidade infantil
 2. Visitante navega por Sobre, Especialidades, Abordagem e Dúvidas.
 3. Visitante seleciona sinais no checklist; o CTA personaliza a mensagem do WhatsApp.
 4. Visitante usa o CTA final ou o botão flutuante para iniciar uma conversa.
+5. Visitante consulta Jundiaí e região e confirma pelo WhatsApp o local e as orientações antes de ir.
 
 ## Auth e integrações
 

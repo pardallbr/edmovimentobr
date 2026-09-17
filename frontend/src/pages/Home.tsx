@@ -27,9 +27,9 @@ import {
 } from "@/lib/whatsapp";
 
 const heroImage =
-  "https://images.unsplash.com/photo-1629862403793-332f8c1ceb0c?crop=entropy&cs=srgb&fm=jpg&q=85&w=1200";
+  "https://static.wixstatic.com/media/ca1e43_a8c3b88b760647bebec80ffb81b5301f~mv2.jpg/v1/fill/w_1200,h_620,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/educacao-do-movimento.jpg";
 const aboutImage =
-  "https://images.pexels.com/photos/16873404/pexels-photo-16873404.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=900&w=700";
+  "https://static.wixstatic.com/media/ca1e43_40d046b5c59142c5a3add3987efd7322~mv2.jpg/v1/crop/x_0,y_187,w_3265,h_3601/fill/w_700,h_770,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/_MG_0051.jpg";
 
 const specialties = [
   {
@@ -110,6 +110,12 @@ const faqs = [
     answer:
       "Roupas confortáveis e vontade de brincar já são um ótimo começo. No contato inicial, combinamos os detalhes do espaço e do atendimento.",
   },
+];
+
+const testimonialProofPoints = [
+  "Escuta atenta para a história de cada criança",
+  "Atividades pensadas para a rotina e os objetivos da família",
+  "Comunicação clara para acompanhar cada pequena conquista",
 ];
 
 const fadeUp = {
@@ -281,6 +287,20 @@ export default function Home() {
           </div>
         </motion.section>
 
+        <motion.section {...fadeUp} data-testid="testimonials-section" className="border-y border-[#dce8df] bg-[#f2f8f3] px-5 py-24 lg:px-10 lg:py-28">
+          <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+            <div>
+              <p data-testid="testimonials-kicker" className="section-kicker">Histórias reais</p>
+              <h2 data-testid="testimonials-title" className="section-title mt-4">Confiança construída em cada encontro.</h2>
+              <p data-testid="testimonials-description" className="mt-6 max-w-xl text-base leading-relaxed text-[#64748b] sm:text-lg">Os relatos das famílias serão publicados aqui somente com autorização. Enquanto isso, este espaço mostra o cuidado que guia cada atendimento.</p>
+              <a data-testid="testimonials-whatsapp-button" href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center gap-2 text-sm font-extrabold text-[#2d6a4f] transition-colors duration-300 hover:text-[#e07a5f]">Quero conversar sobre o atendimento <ArrowUpRight size={17} /></a>
+            </div>
+            <div data-testid="testimonials-content" className="grid gap-3 sm:grid-cols-3 lg:gap-4">
+              {testimonialProofPoints.map((point, index) => <div data-testid={`testimonial-proof-${index}`} key={point} className="relative rounded-[24px] border border-white bg-white p-5 shadow-[0_18px_35px_-28px_rgba(45,106,79,0.6)] sm:min-h-[190px]"><Quote size={22} className="text-[#ffb703]" /><p data-testid={`testimonial-proof-text-${index}`} className="mt-8 font-heading text-base font-bold leading-snug text-[#2d6a4f]">{point}</p><span data-testid={`testimonial-proof-label-${index}`} className="absolute bottom-5 left-5 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-[#94a99a]">Princípio EdMovimento</span></div>)}
+            </div>
+          </div>
+        </motion.section>
+
         <motion.section {...fadeUp} data-testid="checklist-section" className="mx-5 mb-24 overflow-hidden rounded-[34px] bg-[#fff0df] lg:mx-auto lg:max-w-7xl">
           <div className="grid gap-12 px-6 py-12 sm:px-12 lg:grid-cols-[0.9fr_1.1fr] lg:px-16 lg:py-16">
             <div><div data-testid="checklist-icon" className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-[#e07a5f] shadow-sm"><Target size={26} /></div><p data-testid="checklist-kicker" className="section-kicker text-[#a65b3d]">Um ponto de partida</p><h2 data-testid="checklist-title" className="section-title mt-4">Você percebe algum desses sinais?</h2><p data-testid="checklist-description" className="mt-5 text-base leading-relaxed text-[#795b4b]">Esta lista não é um diagnóstico. É só um convite para observar com carinho e iniciar uma conversa.</p><a data-testid="checklist-whatsapp-button" href={checklistUrl} target="_blank" rel="noopener noreferrer" className={cn(buttonVariants({ size: "lg" }), "mt-8 gap-2 rounded-full bg-[#e07a5f] px-5 text-white hover:bg-[#c9674d]") }><MessageCircle size={18} /> Conversar sobre isso</a></div>
@@ -302,7 +322,7 @@ export default function Home() {
           <div className="absolute -right-24 -top-32 h-80 w-80 rounded-full border-[44px] border-white/10" /><div className="absolute -bottom-28 left-1/4 h-64 w-64 rounded-full bg-[#52b788]/25 blur-3xl" />
           <div className="relative mx-auto grid max-w-7xl items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
             <div><p data-testid="contact-kicker" className="text-xs font-bold uppercase tracking-[0.2em] text-[#a9dfb8]">Vamos conversar?</p><h2 data-testid="contact-title" className="mt-4 max-w-2xl font-heading text-4xl font-extrabold leading-tight tracking-[-0.055em] sm:text-5xl">Toda grande descoberta começa com espaço para brincar.</h2><p data-testid="contact-description" className="mt-5 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">Conte um pouco sobre o que você está buscando. O primeiro passo pode ser uma conversa leve, sem compromisso.</p></div>
-            <div data-testid="contact-card" className="rounded-[26px] border border-white/15 bg-white/10 p-6 backdrop-blur-md sm:p-7"><div data-testid="contact-location" className="flex gap-3 border-b border-white/15 pb-5"><MapPin className="mt-0.5 shrink-0 text-[#ffcf53]" size={20} /><div><p data-testid="contact-location-label" className="text-xs font-bold uppercase tracking-[0.14em] text-white/55">Atendimento</p><p data-testid="contact-location-value" className="mt-1 font-semibold">Jundiaí e região · São Paulo</p></div></div><div data-testid="contact-phone" className="flex gap-3 py-5"><MessageCircle className="mt-0.5 shrink-0 text-[#6bea91]" size={20} /><div><p data-testid="contact-phone-label" className="text-xs font-bold uppercase tracking-[0.14em] text-white/55">WhatsApp</p><p data-testid="contact-phone-value" className="mt-1 font-semibold">{whatsappDisplayPhone}</p></div></div><a data-testid="contact-whatsapp-button" href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className={cn(buttonVariants({ size: "lg" }), "w-full gap-2 rounded-full bg-[#25d366] text-[#0c3b25] hover:bg-[#6bea91]")}>Quero agendar uma conversa <ArrowUpRight size={18} /></a></div>
+            <div data-testid="contact-card" className="rounded-[26px] border border-white/15 bg-white/10 p-6 backdrop-blur-md sm:p-7"><div data-testid="contact-location" className="flex gap-3 border-b border-white/15 pb-5"><MapPin className="mt-0.5 shrink-0 text-[#ffcf53]" size={20} /><div><p data-testid="contact-location-label" className="text-xs font-bold uppercase tracking-[0.14em] text-white/55">Atendimento</p><p data-testid="contact-location-value" className="mt-1 font-semibold">Jundiaí e região · São Paulo</p></div></div><div data-testid="contact-directions" className="flex gap-3 border-b border-white/15 py-5"><Compass className="mt-0.5 shrink-0 text-[#a9dfb8]" size={20} /><div><p data-testid="contact-directions-label" className="text-xs font-bold uppercase tracking-[0.14em] text-white/55">Orientações</p><p data-testid="contact-directions-value" className="mt-1 text-sm leading-relaxed text-white/75">Confirme pelo WhatsApp o local disponível e as orientações antes de vir.</p></div></div><div data-testid="contact-phone" className="flex gap-3 py-5"><MessageCircle className="mt-0.5 shrink-0 text-[#6bea91]" size={20} /><div><p data-testid="contact-phone-label" className="text-xs font-bold uppercase tracking-[0.14em] text-white/55">WhatsApp</p><p data-testid="contact-phone-value" className="mt-1 font-semibold">{whatsappDisplayPhone}</p></div></div><a data-testid="contact-whatsapp-button" href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className={cn(buttonVariants({ size: "lg" }), "w-full gap-2 rounded-full bg-[#25d366] text-[#0c3b25] hover:bg-[#6bea91]")}>Quero agendar uma conversa <ArrowUpRight size={18} /></a></div>
           </div>
         </motion.section>
       </main>

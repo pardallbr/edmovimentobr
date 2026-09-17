@@ -1,0 +1,61 @@
+{
+  "iteration": 1,
+  "passed": 7,
+  "failed": 0,
+  "bugs": [],
+  "action_items": [
+    "Backend suite has no API tests configured (pytest reported no tests); acceptance matrix contains frontend-only criteria."
+  ],
+  "retest_needed": false,
+  "checks": [
+    {
+      "criterion": "Landing page pública em português apresenta hero, navegação, Sobre, Especialidades, Abordagem, checklist, FAQ e Contato",
+      "name": "landing-sections-navigation",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Hero, Sobre, Especialidades, Abordagem, checklist, FAQ e Contato visíveis; navegação Sobre atualizou a URL para #sobre."
+    },
+    {
+      "criterion": "As imagens reais do site de referência são usadas na landing page",
+      "name": "reference-images-load",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "hero-image e about-image usam https://static.wixstatic.com/ e ambos carregaram com naturalWidth > 0."
+    },
+    {
+      "criterion": "Visitante consegue iniciar contato pelo WhatsApp",
+      "name": "whatsapp-contact-ctas",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Seis CTAs verificados com href iniciando por https://wa.me/5511995415005?text= e target=_blank."
+    },
+    {
+      "criterion": "Checklist de sinais personaliza o contato",
+      "name": "checklist-personalizes-whatsapp",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Selecionar o primeiro sinal exibiu '1 item selecionado' e atualizou o CTA com mensagem URL-encoded contendo 'Dificuldade para correr'."
+    },
+    {
+      "criterion": "Seção de orientação de atendimento mostra Jundiaí e região sem inventar endereço",
+      "name": "contact-location-guidance",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Contato mostra 'Jundiaí e região' e instrui confirmar pelo WhatsApp o local disponível."
+    },
+    {
+      "criterion": "FAQ é interativo",
+      "name": "faq-opens-answer",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Clicar na primeira pergunta abriu faq-item-0 e tornou a resposta correspondente visível."
+    },
+    {
+      "criterion": "Página é responsiva e não apresenta erros no fluxo principal",
+      "name": "landing-responsive-clean-flow",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Fluxo desktop navegou até FAQ, abriu resposta e não observou respostas HTTP >= 400 nem erros de console em modo estrito."
+    }
+  ]
+}
