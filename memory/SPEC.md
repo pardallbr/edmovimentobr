@@ -13,6 +13,7 @@ Landing page pública em português para o trabalho de psicomotricidade infantil
 - As imagens principais usam as duas fotos autorais publicadas no site Wix de referência.
 - A área de histórias reais está preparada, mas o site de referência não publica depoimentos de famílias; nenhum relato foi inventado.
 - A comunicação deve diferenciar psicomotricidade clínica — técnica, avaliativa e individualizada — de recursos lúdicos que podem ser usados quando forem adequados ao objetivo terapêutico.
+- A formação em Educação Física é de 2010; a atuação com psicomotricidade deve ser apresentada como iniciada em 2019.
 
 ## Fluxos principais
 
