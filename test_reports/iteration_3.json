@@ -1,0 +1,33 @@
+{
+  "iteration": 3,
+  "passed": 3,
+  "failed": 0,
+  "bugs": [],
+  "action_items": [
+    "Backend suite has no API tests configured (pytest reported no tests); this briefing's acceptance criteria are purely visual/CSS (hero image crop, testimonial card spacing) with no API surface, so no new backend test file was needed."
+  ],
+  "retest_needed": false,
+  "checks": [
+    {
+      "criterion": "A arte do hero mostra somente o símbolo colorido, sem a parte escrita 'educação do movimento' da imagem original",
+      "name": "hero-image-symbol-only",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "hero-image-frame has overflow:hidden and hero-image is rendered enlarged (height >= 95% of frame height with a CSS transform applied), pushing the lower lettering portion of the original artwork out of the visible crop. Screenshot confirms only the colored symbol is visible in the hero."
+    },
+    {
+      "criterion": "Os textos dos três cards da seção Histórias reais não se sobrepõem",
+      "name": "testimonial-cards-no-overlap",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "For testimonial-proof-0/1/2, each card's title and 'Princípio EdMovimento' label bounding boxes are fully inside the card, and the label's top y is >= the title's bottom y (no vertical overlap) for all three cards. Screenshot confirms clear visual separation."
+    },
+    {
+      "criterion": "A landing page permanece funcional após os ajustes visuais",
+      "name": "landing-page-functional-after-tweaks",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Hero image, nav-about-link click (navigated to #sobre), all three testimonial-proof cards, checklist item, and contact-location-value all rendered visible; zero HTTP responses >= 400 and zero page errors captured during the flow."
+    }
+  ]
+}

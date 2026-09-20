@@ -217,7 +217,7 @@ export default function Home() {
             <div className="absolute -right-4 top-4 h-32 w-32 rounded-full bg-[#ffb703]/25 blur-2xl" />
             <div className="absolute -bottom-8 -left-8 h-44 w-44 rounded-full bg-[#52b788]/25 blur-3xl" />
             <div data-testid="hero-image-frame" className="relative overflow-hidden rounded-[40px] rounded-bl-[110px] border-[10px] border-white bg-[#eaf4ed] shadow-[0_30px_70px_-32px_rgba(45,106,79,0.65)]">
-              <img data-testid="hero-image" src={heroImage} alt="Criança explorando uma atividade de equilíbrio ao ar livre" className="h-[470px] w-full object-cover sm:h-[540px]" />
+              <img data-testid="hero-image" src={heroImage} alt="Símbolo da Educação do Movimento" className="h-[470px] w-full origin-top scale-[1.78] object-cover object-top sm:h-[540px]" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1e4e3a]/35 via-transparent to-transparent" />
             </div>
             <div data-testid="hero-floating-note" className="float-slow absolute -bottom-5 left-3 flex max-w-[230px] items-center gap-3 rounded-2xl border border-white/90 bg-white/90 px-4 py-3 shadow-[0_18px_40px_-20px_rgba(30,41,59,0.5)] backdrop-blur-md sm:-left-8">
@@ -339,7 +339,7 @@ export default function Home() {
               <a data-testid="testimonials-whatsapp-button" href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center gap-2 text-sm font-extrabold text-[#2d6a4f] transition-colors duration-300 hover:text-[#e07a5f]">Quero conversar sobre o atendimento <ArrowUpRight size={17} /></a>
             </div>
             <div data-testid="testimonials-content" className="grid gap-3 sm:grid-cols-3 lg:gap-4">
-              {testimonialProofPoints.map((point, index) => <div data-testid={`testimonial-proof-${index}`} key={point} className="relative rounded-[24px] border border-white bg-white p-5 shadow-[0_18px_35px_-28px_rgba(45,106,79,0.6)] sm:min-h-[190px]"><Quote size={22} className="text-[#ffb703]" /><p data-testid={`testimonial-proof-text-${index}`} className="mt-8 font-heading text-base font-bold leading-snug text-[#2d6a4f]">{point}</p><span data-testid={`testimonial-proof-label-${index}`} className="absolute bottom-5 left-5 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-[#94a99a]">Princípio EdMovimento</span></div>)}
+              {testimonialProofPoints.map((point, index) => <div data-testid={`testimonial-proof-${index}`} key={point} className="flex min-h-[260px] flex-col rounded-[24px] border border-white bg-white p-5 shadow-[0_18px_35px_-28px_rgba(45,106,79,0.6)]"><Quote size={22} className="shrink-0 text-[#ffb703]" /><p data-testid={`testimonial-proof-text-${index}`} className="mt-7 font-heading text-base font-bold leading-snug text-[#2d6a4f]">{point}</p><span data-testid={`testimonial-proof-label-${index}`} className="mt-auto pt-6 text-[0.68rem] font-bold uppercase tracking-[0.14em] text-[#94a99a]">Princípio EdMovimento</span></div>)}
             </div>
           </div>
         </motion.section>
