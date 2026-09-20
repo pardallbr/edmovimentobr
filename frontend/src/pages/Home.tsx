@@ -162,6 +162,7 @@ export default function Home() {
             <a data-testid="nav-about-link" href="#sobre" className="nav-link">Sobre</a>
             <a data-testid="nav-specialties-link" href="#especialidades" className="nav-link">Especialidades</a>
             <a data-testid="nav-approach-link" href="#abordagem" className="nav-link">Abordagem</a>
+            <a data-testid="nav-clinical-link" href="#psicomotricidade" className="nav-link">Psicomotricidade</a>
             <a data-testid="nav-faq-link" href="#duvidas" className="nav-link">Dúvidas</a>
           </nav>
 
@@ -249,7 +250,7 @@ export default function Home() {
             <p data-testid="about-text-secondary" className="mt-4 text-base leading-relaxed text-[#64748b] sm:text-lg">Meu trabalho combina avaliação, intervenção psicomotora e atividades significativas para a criança se expressar, ganhar autonomia e avançar em cada objetivo definido.</p>
             <div data-testid="about-credentials-list" className="mt-8 grid gap-3 sm:grid-cols-2">
               <div data-testid="about-credential-registration" className="flex items-center gap-3 rounded-xl bg-[#f2f8f3] p-3 text-sm font-semibold text-[#2d6a4f]"><span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-[#52b788]"><Check size={16} /></span> CREF 091220-G/SP</div>
-              <div data-testid="about-credential-aba" className="flex items-center gap-3 rounded-xl bg-[#fff5ea] p-3 text-sm font-semibold text-[#9a5a36]"><span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-[#e07a5f]"><Check size={16} /></span> Especialista em ABA</div>
+              <div data-testid="about-credential-psychomotricity" className="flex items-center gap-3 rounded-xl bg-[#fff5ea] p-3 text-sm font-semibold text-[#9a5a36]"><span className="flex h-8 w-8 items-center justify-center rounded-lg bg-white text-[#e07a5f]"><Check size={16} /></span> Especialista em Psicomotricidade</div>
             </div>
           </div>
         </motion.section>
@@ -283,6 +284,44 @@ export default function Home() {
             <div><p data-testid="approach-kicker" className="section-kicker">A abordagem</p><h2 data-testid="approach-title" className="section-title mt-4">Cada intervenção tem um propósito.</h2><p data-testid="approach-description" className="mt-6 text-base leading-relaxed text-[#64748b] sm:text-lg">A psicomotricidade clínica é um trabalho técnico e individualizado. Avaliamos necessidades, definimos objetivos e selecionamos recursos adequados para favorecer o desenvolvimento motor, emocional e funcional.</p><a data-testid="approach-whatsapp-link" href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-2 text-sm font-extrabold text-[#2d6a4f] transition-colors duration-300 hover:text-[#e07a5f]">Tire suas dúvidas <ArrowUpRight size={17} /></a></div>
             <div data-testid="approach-list" className="grid gap-4">
               {approachItems.map(({ icon: Icon, title, text }, index) => <div data-testid={`approach-item-${index}`} key={title} className="group flex gap-5 rounded-2xl border border-[#e1ebe3] bg-white p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[#b9d8c0] hover:shadow-[0_20px_40px_-28px_rgba(45,106,79,0.6)]"><span data-testid={`approach-icon-${index}`} className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[#f2f8f3] text-[#2d6a4f] transition-colors duration-300 group-hover:bg-[#2d6a4f] group-hover:text-white"><Icon size={23} /></span><div><h3 data-testid={`approach-item-title-${index}`} className="font-heading text-lg font-bold text-[#1e293b]">{title}</h3><p data-testid={`approach-item-text-${index}`} className="mt-1 text-sm leading-relaxed text-[#64748b]">{text}</p></div></div>)}
+            </div>
+          </div>
+        </motion.section>
+
+        <motion.section {...fadeUp} id="psicomotricidade" data-testid="clinical-section" className="bg-[#1e4e3a] px-5 py-24 text-white lg:px-10 lg:py-32">
+          <div className="mx-auto max-w-7xl">
+            <div className="max-w-3xl">
+              <p data-testid="clinical-kicker" className="text-xs font-bold uppercase tracking-[0.2em] text-[#a9dfb8]">Psicomotricidade clínica</p>
+              <h2 data-testid="clinical-title" className="mt-4 max-w-3xl font-heading text-4xl font-extrabold leading-tight tracking-[-0.06em] sm:text-5xl">Um acompanhamento técnico, construído para cada criança.</h2>
+              <p data-testid="clinical-description" className="mt-6 max-w-2xl text-base leading-relaxed text-white/72 sm:text-lg">A clínica começa pela compreensão do desenvolvimento. A partir da avaliação, definimos objetivos e organizamos uma intervenção individualizada, acompanhada de perto com a família.</p>
+            </div>
+
+            <div data-testid="clinical-process-grid" className="mt-12 grid gap-4 lg:grid-cols-[1.05fr_0.95fr]">
+              <div data-testid="clinical-evaluation-card" className="rounded-[28px] border border-white/12 bg-white/10 p-6 backdrop-blur-sm sm:p-8">
+                <div className="flex items-center justify-between gap-4"><span data-testid="clinical-evaluation-icon" className="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#ffcf53] text-[#6b4b08]"><Target size={23} /></span><span data-testid="clinical-evaluation-label" className="text-xs font-bold uppercase tracking-[0.16em] text-white/50">01 · 02 · 03</span></div>
+                <h3 data-testid="clinical-evaluation-title" className="mt-8 font-heading text-2xl font-bold tracking-[-0.04em]">Avaliação e devolutiva</h3>
+                <p data-testid="clinical-evaluation-description" className="mt-3 max-w-xl text-sm leading-relaxed text-white/70">Um processo de escuta, observação e análise para compreender habilidades, desafios e prioridades do desenvolvimento psicomotor.</p>
+                <div data-testid="clinical-evaluation-steps" className="mt-7 grid gap-3 sm:grid-cols-3">
+                  <div data-testid="clinical-step-1" className="rounded-2xl border border-white/10 bg-white/5 p-4"><span data-testid="clinical-step-1-number" className="font-mono text-xs font-bold text-[#ffcf53]">01</span><p data-testid="clinical-step-1-text" className="mt-3 text-sm font-semibold text-white">Escuta inicial com a família</p></div>
+                  <div data-testid="clinical-step-2" className="rounded-2xl border border-white/10 bg-white/5 p-4"><span data-testid="clinical-step-2-number" className="font-mono text-xs font-bold text-[#ffcf53]">02</span><p data-testid="clinical-step-2-text" className="mt-3 text-sm font-semibold text-white">Observação e avaliação</p></div>
+                  <div data-testid="clinical-step-3" className="rounded-2xl border border-white/10 bg-white/5 p-4"><span data-testid="clinical-step-3-number" className="font-mono text-xs font-bold text-[#ffcf53]">03</span><p data-testid="clinical-step-3-text" className="mt-3 text-sm font-semibold text-white">Devolutiva e próximos passos</p></div>
+                </div>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+                <div data-testid="individual-plan-card" className="rounded-[28px] bg-[#f2f8f3] p-6 text-[#1e293b] sm:p-8">
+                  <span data-testid="individual-plan-icon" className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#dcefe1] text-[#2d6a4f]"><Compass size={22} /></span>
+                  <h3 data-testid="individual-plan-title" className="mt-6 font-heading text-2xl font-bold tracking-[-0.04em]">Plano individual</h3>
+                  <p data-testid="individual-plan-description" className="mt-3 text-sm leading-relaxed text-[#64748b]">Cada intervenção parte das necessidades observadas e das metas combinadas com a família, com acompanhamento e ajustes ao longo do processo.</p>
+                  <div data-testid="individual-plan-points" className="mt-5 flex flex-wrap gap-2"><span data-testid="individual-plan-point-1" className="rounded-full bg-white px-3 py-1.5 text-xs font-bold text-[#2d6a4f]">Objetivos claros</span><span data-testid="individual-plan-point-2" className="rounded-full bg-white px-3 py-1.5 text-xs font-bold text-[#2d6a4f]">Acompanhamento</span><span data-testid="individual-plan-point-3" className="rounded-full bg-white px-3 py-1.5 text-xs font-bold text-[#2d6a4f]">Ajustes necessários</span></div>
+                </div>
+                <div data-testid="family-guidance-card" className="rounded-[28px] bg-[#fff0df] p-6 text-[#1e293b] sm:p-8">
+                  <span data-testid="family-guidance-icon" className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white text-[#e07a5f]"><HeartHandshake size={22} /></span>
+                  <h3 data-testid="family-guidance-title" className="mt-6 font-heading text-2xl font-bold tracking-[-0.04em]">Orientação familiar</h3>
+                  <p data-testid="family-guidance-description" className="mt-3 text-sm leading-relaxed text-[#795b4b]">A família participa do processo com informações claras e recomendações técnicas possíveis de levar para a rotina.</p>
+                  <a data-testid="family-guidance-whatsapp-button" href={whatsappUrl("Olá! Gostaria de entender como funciona a avaliação psicomotora e a orientação para a família.")} target="_blank" rel="noopener noreferrer" className="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-[#a65b3d] transition-colors duration-300 hover:text-[#2d6a4f]">Conversar sobre a avaliação <ArrowUpRight size={17} /></a>
+                </div>
+              </div>
             </div>
           </div>
         </motion.section>

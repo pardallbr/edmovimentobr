@@ -14,6 +14,8 @@ Landing page pública em português para o trabalho de psicomotricidade infantil
 - A área de histórias reais está preparada, mas o site de referência não publica depoimentos de famílias; nenhum relato foi inventado.
 - A comunicação deve diferenciar psicomotricidade clínica — técnica, avaliativa e individualizada — de recursos lúdicos que podem ser usados quando forem adequados ao objetivo terapêutico.
 - A formação em Educação Física é de 2010; a atuação com psicomotricidade deve ser apresentada como iniciada em 2019.
+- A seção de psicomotricidade clínica explica avaliação e devolutiva, plano individual baseado em necessidades/metas e orientação técnica para a família.
+- O destaque de credencial na seção Sobre usa “Especialista em Psicomotricidade”; ABA permanece descrito na formação e no conteúdo clínico.
 
 ## Fluxos principais
 
@@ -22,6 +24,7 @@ Landing page pública em português para o trabalho de psicomotricidade infantil
 3. Visitante seleciona sinais no checklist; o CTA personaliza a mensagem do WhatsApp.
 4. Visitante usa o CTA final ou o botão flutuante para iniciar uma conversa.
 5. Visitante consulta Jundiaí e região e confirma pelo WhatsApp o local e as orientações antes de ir.
+6. Visitante entende as etapas da avaliação clínica e pode iniciar conversa específica pelo WhatsApp.
 
 ## Auth e integrações
 

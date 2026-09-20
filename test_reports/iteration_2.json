@@ -1,0 +1,54 @@
+{
+  "iteration": 2,
+  "passed": 6,
+  "failed": 0,
+  "bugs": [],
+  "action_items": [
+    "Backend suite has no API tests configured (pytest reported no tests); all acceptance criteria in this briefing are covered by browser checks."
+  ],
+  "retest_needed": false,
+  "checks": [
+    {
+      "criterion": "A seção Psicomotricidade clínica está acessível pela navegação e renderiza no fluxo público",
+      "name": "clinical-section-navigation",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Clique em nav-clinical-link atualizou a URL para #psicomotricidade; clinical-section ficou visível e exibiu 'Um acompanhamento técnico, construído para cada criança.'."
+    },
+    {
+      "criterion": "A seção descreve avaliação e devolutiva",
+      "name": "clinical-evaluation-feedback",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Card 'Avaliação e devolutiva' exibiu os três passos: escuta inicial, observação e avaliação, e devolutiva e próximos passos."
+    },
+    {
+      "criterion": "A página explica o plano individual",
+      "name": "clinical-individual-plan",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Card 'Plano individual' informou necessidades observadas e metas combinadas com a família."
+    },
+    {
+      "criterion": "A página oferece orientação familiar técnica",
+      "name": "clinical-family-guidance",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Card 'Orientação familiar' exibiu recomendações técnicas aplicáveis à rotina e CTA visível para WhatsApp."
+    },
+    {
+      "criterion": "CTA clínico abre o WhatsApp correto",
+      "name": "clinical-whatsapp-cta",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "family-guidance-whatsapp-button usou href iniciando por https://wa.me/5511995415005?text=; mensagem contém avaliação psicomotora e orientação para a família."
+    },
+    {
+      "criterion": "A landing page existente continua funcionando",
+      "name": "public-landing-regression",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Hero, Sobre, Especialidades, Abordagem, checklist, FAQ e Contato ficaram visíveis; FAQ abriu após navegação e não houve respostas HTTP >= 400 no fluxo."
+    }
+  ]
+}
