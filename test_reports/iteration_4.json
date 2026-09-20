@@ -1,0 +1,33 @@
+{
+  "iteration": 4,
+  "passed": 3,
+  "failed": 0,
+  "bugs": [],
+  "action_items": [
+    "Backend suite has no API tests configured; this briefing's acceptance criteria are purely visual/CSS (hero image square frame sizing) with no API surface, so no new backend test file was needed."
+  ],
+  "retest_needed": false,
+  "checks": [
+    {
+      "criterion": "O bloco visual do hero é um quadrado menor e elegante, sem aparência esticada (aspect-square, max-width ~430px, cantos arredondados)",
+      "name": "hero-image-frame-square-compact",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "hero-image-frame bounding box has width/height ratio between 0.9-1.1 (square), width <= 440px and > 300px (matches ~403x403 expected at 1280px viewport), non-zero border-radius, and hero-image remains visible alongside it. Screenshot confirms a compact rounded square frame."
+    },
+    {
+      "criterion": "O hero continua mostrando somente o desenho colorido, sem o lettering preto da imagem original",
+      "name": "hero-image-symbol-only",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Re-ran persisted check: hero-image-frame has overflow:hidden, hero-image is rendered enlarged via CSS transform (scale) inside the frame, pushing the lettering portion out of the visible crop. Screenshot confirms only the colored symbol is visible."
+    },
+    {
+      "criterion": "A alteração não causa regressões no hero ou na landing page (título, CTAs, nota flutuante, navegação, seção seguinte visíveis; sem erros de console/HTTP>=400)",
+      "name": "landing-page-functional-after-tweaks",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Re-ran persisted check: hero-image visible, nav-about-link click navigates to #sobre, all three testimonial-proof cards visible, checklist item visible, contact-location-value visible; zero HTTP responses >= 400 and zero page errors captured."
+    }
+  ]
+}

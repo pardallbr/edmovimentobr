@@ -213,14 +213,14 @@ export default function Home() {
             </div>
           </motion.div>
 
-          <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.12 }} className="relative mx-auto w-full max-w-[540px] lg:ml-auto">
+          <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.12 }} className="relative mx-auto w-[88%] max-w-[430px] lg:ml-auto lg:mr-6">
             <div className="absolute -right-4 top-4 h-32 w-32 rounded-full bg-[#ffb703]/25 blur-2xl" />
             <div className="absolute -bottom-8 -left-8 h-44 w-44 rounded-full bg-[#52b788]/25 blur-3xl" />
-            <div data-testid="hero-image-frame" className="relative overflow-hidden rounded-[40px] rounded-bl-[110px] border-[10px] border-white bg-[#eaf4ed] shadow-[0_30px_70px_-32px_rgba(45,106,79,0.65)]">
-              <img data-testid="hero-image" src={heroImage} alt="Símbolo da Educação do Movimento" className="h-[470px] w-full origin-top scale-[1.78] object-cover object-top sm:h-[540px]" />
+            <div data-testid="hero-image-frame" className="relative aspect-square overflow-hidden rounded-[34px] rounded-bl-[76px] border-[8px] border-white bg-[#eaf4ed] shadow-[0_28px_60px_-32px_rgba(45,106,79,0.62)]">
+              <img data-testid="hero-image" src={heroImage} alt="Símbolo da Educação do Movimento" className="h-full w-full origin-top scale-[1.8] object-cover object-top" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1e4e3a]/35 via-transparent to-transparent" />
             </div>
-            <div data-testid="hero-floating-note" className="float-slow absolute -bottom-5 left-3 flex max-w-[230px] items-center gap-3 rounded-2xl border border-white/90 bg-white/90 px-4 py-3 shadow-[0_18px_40px_-20px_rgba(30,41,59,0.5)] backdrop-blur-md sm:-left-8">
+            <div data-testid="hero-floating-note" className="float-slow absolute -bottom-5 left-2 flex max-w-[215px] items-center gap-3 rounded-2xl border border-white/90 bg-white/90 px-4 py-3 shadow-[0_18px_40px_-20px_rgba(30,41,59,0.5)] backdrop-blur-md sm:-left-6">
               <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#fff0df] text-[#e07a5f]"><HeartHandshake size={20} /></span>
               <p data-testid="hero-floating-note-text" className="text-xs font-bold leading-snug text-[#1e293b]">Cada conquista começa com um acompanhamento individualizado.</p>
             </div>
