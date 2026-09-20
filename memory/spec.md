@@ -12,3 +12,4 @@ Landing page pública em pt-BR para psicomotricidade infantil e juvenil em Jundi
 - O profissional é apresentado como formado em 2010 e atuante com psicomotricidade desde 2019.
 - A página explica avaliação/devolutiva, plano individual e recomendações técnicas para a continuidade familiar.
 - A credencial destacada no bloco Sobre é “Especialista em Psicomotricidade”.
+- O cartão de contato mostra nota 5,0 e 76 avaliações do perfil público, com botão externo seguro para o Google Maps.

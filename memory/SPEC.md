@@ -16,6 +16,7 @@ Landing page pública em português para o trabalho de psicomotricidade infantil
 - A formação em Educação Física é de 2010; a atuação com psicomotricidade deve ser apresentada como iniciada em 2019.
 - A seção de psicomotricidade clínica explica avaliação e devolutiva, plano individual baseado em necessidades/metas e orientação técnica para a família.
 - O destaque de credencial na seção Sobre usa “Especialista em Psicomotricidade”; ABA permanece descrito na formação e no conteúdo clínico.
+- O contato exibe um retrato editorial do perfil público no Google (nota 5,0 e 76 avaliações) e um link externo para perfil, avaliações e rotas, sem Maps API.
 
 ## Fluxos principais
 
@@ -25,6 +26,7 @@ Landing page pública em português para o trabalho de psicomotricidade infantil
 4. Visitante usa o CTA final ou o botão flutuante para iniciar uma conversa.
 5. Visitante consulta Jundiaí e região e confirma pelo WhatsApp o local e as orientações antes de ir.
 6. Visitante entende as etapas da avaliação clínica e pode iniciar conversa específica pelo WhatsApp.
+7. Visitante abre o perfil público no Google para consultar avaliações e rotas.
 
 ## Auth e integrações
 
