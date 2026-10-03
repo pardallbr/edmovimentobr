@@ -1,0 +1,75 @@
+{
+  "iteration": 5,
+  "passed": 7,
+  "failed": 0,
+  "bugs": [],
+  "action_items": [
+    "Criterion 2 (Home split into components) verified at the component level (SiteHeader, HeroSection, ClinicalSection, ChecklistSection, ContactSection, etc. are separate, typed, ReactElement-returning functions), but they still live inside pages/Home.tsx rather than individual files. The acceptance text only required them to 'exist separately', which is satisfied; flagging as a note in case the reviewer intended separate files."
+  ],
+  "retest_needed": false,
+  "checks": [
+    {
+      "criterion": "O useMemo do checklist declara todas as dependências solicitadas pela revisão (selectedSigns, DEFAULT_WHATSAPP_MESSAGE, whatsappUrl) e personaliza o href do WhatsApp",
+      "name": "static-review-usememo-deps",
+      "lane": "code-review",
+      "status": "passed",
+      "evidence": "Home.tsx line 241: useMemo(..., [selectedSigns, DEFAULT_WHATSAPP_MESSAGE, whatsappUrl]) — exact deps required."
+    },
+    {
+      "criterion": "Checklist personaliza corretamente o href do WhatsApp ao selecionar sinais",
+      "name": "checklist-personalizes-whatsapp",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Re-ran persisted check (reran-persisted mode): selecting checklist options 0 and 2 updates checklist-selection-status to '2 itens selecionados.' and checklist-whatsapp-button href includes both selected sign texts URL-encoded."
+    },
+    {
+      "criterion": "Home foi reduzido e a UI separada em componentes menores tipados (SiteHeader, HeroSection, ClinicalSection, ChecklistSection, ContactSection etc.)",
+      "name": "static-review-component-split",
+      "lane": "code-review",
+      "status": "passed",
+      "evidence": "pages/Home.tsx defines SiteHeader, HeroSection, TrustStrip, AboutSection, SpecialtiesSection, ApproachSection, EvaluationCard, IndividualPlanCard, FamilyGuidanceCard, ClinicalSection, TestimonialsSection, ChecklistSection, FaqSection, ContactSection, SiteFooter, FloatingWhatsapp as discrete functions each typed ': ReactElement'; default export Home() only holds useState/useMemo/toggleSign and composes these components in JSX."
+    },
+    {
+      "criterion": "Objetos de animação não são recriados inline (hero transition, whileHover/transition das especialidades)",
+      "name": "static-review-animation-constants",
+      "lane": "code-review",
+      "status": "passed",
+      "evidence": "Module-level consts fadeUp, heroImageTransition, specialtyHover, specialtyTransition (Home.tsx lines 125-133) are referenced via {...fadeUp}, transition={heroImageTransition}, whileHover={specialtyHover}, transition={specialtyTransition} — none re-literal'd inline in JSX."
+    },
+    {
+      "criterion": "vite.config.ts simplificado, sem console.warn, com helpers nomeados tipados; frontend inicia normalmente",
+      "name": "static-review-vite-config",
+      "lane": "code-review",
+      "status": "passed",
+      "evidence": "grep -n 'console.warn' vite.config.ts -> no match. Named typed helpers present: loadEmergentOverlay(): Promise<PluginOption|null>, createViteConfig(emergentOverlay): UserConfig, resolveViteConfig(): Promise<UserConfig>; optimizedDependencies extracted as a const array. curl http://localhost:3000/ -> 200."
+    },
+    {
+      "criterion": "Tipagem explícita ampliada (App, Home, subcomponentes, lucide helper, vite config, handlers FastAPI) e o typecheck passa",
+      "name": "static-review-typecheck",
+      "lane": "code-review",
+      "status": "passed",
+      "evidence": "cd /app/frontend && npx tsc --noEmit -p tsconfig.json exited 0 with no output. Spot-checked annotations: Home.tsx component functions return ReactElement, toggleSign(sign: string): void; vite.config.ts functions typed as above; backend/server.py handlers annotated e.g. async def root() -> dict[str, str]."
+    },
+    {
+      "criterion": "O import motion permanece porque é realmente utilizado (sem falso positivo de import não utilizado)",
+      "name": "static-review-motion-import-used",
+      "lane": "code-review",
+      "status": "passed",
+      "evidence": "Home.tsx imports { motion } from 'motion/react' and renders motion.div/motion.section/motion.article across HeroSection, AboutSection, SpecialtiesSection, ApproachSection, ClinicalSection, TestimonialsSection, ChecklistSection, FaqSection, ContactSection — confirmed live usage, not dead import."
+    },
+    {
+      "criterion": "A refatoração não alterou os fluxos públicos (hero, navegação, psicomotricidade clínica, checklist, FAQ, contato, Google, WhatsApp) sem erros console/HTTP>=400",
+      "name": "public-landing-regression",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Re-ran persisted check: hero-section visible; about/specialties/approach/checklist/faq/contact sections all visible; nav-faq-link click navigates to #duvidas; faq-question-0 click reveals faq-answer-0; zero HTTP responses >= 400 captured."
+    },
+    {
+      "criterion": "Fluxos de contato (localização), seção clínica e CTAs de WhatsApp continuam funcionais",
+      "name": "contact-location-guidance / clinical-section-navigation",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Re-ran both persisted checks: contact-location-guidance confirms contact-location-value and WhatsApp CTA in contact-card; clinical-section-navigation confirms clinical-section renders EvaluationCard/IndividualPlanCard/FamilyGuidanceCard with working WhatsApp CTA link."
+    }
+  ]
+}

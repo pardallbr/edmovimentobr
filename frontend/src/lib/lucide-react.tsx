@@ -4,7 +4,12 @@
 // names backed by Simple Icons, or lucide's own 0.x glyph (ISC) where Simple Icons has no mark.
 // New code should import the Si* components from "@icons-pack/react-simple-icons" directly.
 /* oxlint-disable react/only-export-components -- every export here is an icon component */
-import { forwardRef, type ComponentPropsWithoutRef } from "react";
+import {
+  forwardRef,
+  type ComponentPropsWithoutRef,
+  type ForwardRefExoticComponent,
+  type RefAttributes,
+} from "react";
 import { createLucideIcon, type LucideProps } from "lucide-react-upstream";
 import {
   SiCodesandbox,
@@ -27,7 +32,10 @@ export * from "lucide-react-upstream";
 
 type IconNode = Parameters<typeof createLucideIcon>[1];
 
-function fromSimpleIcons(name: string, Si: IconType) {
+function fromSimpleIcons(
+  name: string,
+  Si: IconType,
+): ForwardRefExoticComponent<LucideProps & RefAttributes<SVGSVGElement>> {
   const Brand = forwardRef<SVGSVGElement, LucideProps>(function Brand(props, ref) {
     // Simple Icons marks are filled shapes: lucide's stroke props mean nothing on them.
     const { size = 24, color = "currentColor", strokeWidth, absoluteStrokeWidth, ...rest } = props;

@@ -1,5 +1,5 @@
 import path from "node:path";
-import { defineConfig, type UserConfig } from "vite";
+import { defineConfig, type PluginOption, type UserConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
 import { visualEdits } from "@emergentbase/visual-edits/vite";
@@ -16,13 +16,12 @@ const emergentOverlayDisabled = process.env.DISABLE_EMERGENT_OVERLAY === "true";
 
 // Fails open: a broken overlay package must degrade to "no overlay" (Vite's own overlay
 // takes over), never to "no dev server". Never let a preview aid take the app down.
-async function loadEmergentOverlay() {
+async function loadEmergentOverlay(): Promise<PluginOption | null> {
   if (emergentOverlayDisabled) return null;
   try {
     const mod = await import("@emergentbase/overlay/vite");
     return mod.emergentOverlay();
-  } catch (e) {
-    console.warn("[emergent-overlay] plugin failed to load; using Vite's overlay instead:", e instanceof Error ? e.message : e);
+  } catch {
     return null;
   }
 }
@@ -33,9 +32,17 @@ if (!hotReloadDisabled) {
   process.env.CHOKIDAR_USEPOLLING = "true";
 }
 
-// https://vite.dev/config/
-export default defineConfig(async () => {
-  const emergentOverlay = await loadEmergentOverlay();
+const optimizedDependencies = [
+  "@base-ui/react/button", "@base-ui/react/checkbox", "@base-ui/react/dialog",
+  "@base-ui/react/input", "@base-ui/react/menu", "@base-ui/react/merge-props",
+  "@base-ui/react/popover", "@base-ui/react/select", "@base-ui/react/tabs",
+  "@base-ui/react/use-render", "@tanstack/react-query", "class-variance-authority",
+  "clsx", "date-fns", "@icons-pack/react-simple-icons", "lucide-react-upstream",
+  "motion/react", "next-themes", "react", "react-day-picker", "react-dom/client",
+  "react-is", "react-router-dom", "recharts-upstream", "sonner", "tailwind-merge",
+];
+
+function createViteConfig(emergentOverlay: PluginOption | null): UserConfig {
   return {
     plugins: [
       react(),
@@ -59,34 +66,7 @@ export default defineConfig(async () => {
     // Every shipped dep, pre-bundled up front. Vite discovers deps lazily, so the first
     // import outside the initial graph would trigger a re-optimize + reload mid-session.
     optimizeDeps: {
-      include: [
-        "@base-ui/react/button",
-        "@base-ui/react/checkbox",
-        "@base-ui/react/dialog",
-        "@base-ui/react/input",
-        "@base-ui/react/menu",
-        "@base-ui/react/merge-props",
-        "@base-ui/react/popover",
-        "@base-ui/react/select",
-        "@base-ui/react/tabs",
-        "@base-ui/react/use-render",
-        "@tanstack/react-query",
-        "class-variance-authority",
-        "clsx",
-        "date-fns",
-        "@icons-pack/react-simple-icons",
-        "lucide-react-upstream",
-        "motion/react",
-        "next-themes",
-        "react",
-        "react-day-picker",
-        "react-dom/client",
-        "react-is",
-        "react-router-dom",
-        "recharts-upstream",
-        "sonner",
-        "tailwind-merge",
-      ],
+      include: optimizedDependencies,
     },
     server: {
       host: true,
@@ -109,4 +89,11 @@ export default defineConfig(async () => {
       },
     },
   } satisfies UserConfig;
-});
+}
+
+async function resolveViteConfig(): Promise<UserConfig> {
+  return createViteConfig(await loadEmergentOverlay());
+}
+
+// https://vite.dev/config/
+export default defineConfig(resolveViteConfig);
