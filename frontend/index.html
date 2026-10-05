@@ -14,8 +14,8 @@
 
       // Conta cada clique em links do WhatsApp (wa.me) como contato.
       // Para o Google Ads contar como conversão, cole o rótulo da conversão abaixo
-      // (a parte depois da barra em 'AW-723319784/ROTULO'). Vazio = só registra o evento.
-      var CONVERSION_LABEL = '';
+      // (a parte depois da barra em 'AW-723319784/ROTULO'). Se ficar vazio, só registra o evento.
+      var CONVERSION_LABEL = '2EnxCIe7rZEdEOj389gC';
       document.addEventListener('click', function (event) {
         var link = event.target && event.target.closest ? event.target.closest('a[href^="https://wa.me/"]') : null;
         if (!link) return;
