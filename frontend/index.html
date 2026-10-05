@@ -3,6 +3,28 @@
   <!-- <html lang="en" class="dark"> — uncomment for dark-by-default (replace the tag above; `dark` is a Tailwind variant, never `@apply` it) -->
   <head>
     <meta charset="UTF-8" />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-723319784"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-723319784');
+
+      // Conta cada clique em links do WhatsApp (wa.me) como contato.
+      // Para o Google Ads contar como conversão, cole o rótulo da conversão abaixo
+      // (a parte depois da barra em 'AW-723319784/ROTULO'). Vazio = só registra o evento.
+      var CONVERSION_LABEL = '';
+      document.addEventListener('click', function (event) {
+        var link = event.target && event.target.closest ? event.target.closest('a[href^="https://wa.me/"]') : null;
+        if (!link) return;
+        gtag('event', 'whatsapp_click');
+        if (CONVERSION_LABEL) {
+          gtag('event', 'conversion', { send_to: 'AW-723319784/' + CONVERSION_LABEL });
+        }
+      });
+    </script>
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
