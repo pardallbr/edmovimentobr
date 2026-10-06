@@ -97,12 +97,17 @@ const faqs = [
   {
     question: "Para qual idade a psicomotricidade é indicada?",
     answer:
-      "O trabalho pode acompanhar diferentes fases do desenvolvimento infantil e da adolescência. A conversa inicial ajuda a entender o momento da criança e qual caminho faz sentido.",
+      "A partir dos 3 anos, sem limite de idade. A conversa inicial ajuda a entender o momento de cada pessoa e qual caminho faz sentido.",
   },
   {
     question: "Como funciona a primeira sessão?",
     answer:
       "Começamos com uma conversa com a família para conhecer a rotina, o histórico e os objetivos. A avaliação e a observação orientada ajudam a construir os próximos passos do acompanhamento.",
+  },
+  {
+    question: "Quanto tempo dura cada sessão?",
+    answer:
+      "Cada sessão dura 50 minutos e acontece com hora marcada previamente.",
   },
   {
     question: "Você atende crianças com TEA?",
@@ -157,7 +162,7 @@ function HeroSection(): ReactElement {
       <motion.div {...fadeUp} className="relative z-10 max-w-2xl">
         <div data-testid="hero-eyebrow" className="mb-7 inline-flex items-center gap-2 rounded-full border border-[#d9e8dc] bg-white/70 px-3.5 py-2 text-xs font-bold uppercase tracking-[0.14em] text-[#2d6a4f] shadow-sm"><Sparkles size={14} className="text-[#ffb703]" />Psicomotricidade infantil e juvenil</div>
         <h1 data-testid="hero-title" className="max-w-[680px] font-heading text-5xl font-extrabold leading-[1.02] tracking-[-0.065em] text-[#1e293b] sm:text-6xl lg:text-[4.65rem]">Desenvolvimento guiado por <span className="relative whitespace-nowrap text-[#2d6a4f]">ciência e movimento.<span className="scribble-line" /></span></h1>
-        <p data-testid="hero-description" className="mt-7 max-w-xl text-lg leading-relaxed text-[#64748b] sm:text-xl">Avaliação e intervenção psicomotora para apoiar cada criança em seu desenvolvimento motor e emocional — com técnica, vínculo e respeito ao seu ritmo.</p>
+        <p data-testid="hero-description" className="mt-7 max-w-xl text-lg leading-relaxed text-[#64748b] sm:text-xl">Psicomotricidade para crianças e adolescentes em Jundiaí e região. Avaliação e intervenção psicomotora para apoiar cada criança em seu desenvolvimento motor e emocional — com técnica, vínculo e respeito ao seu ritmo.</p>
         <div data-testid="hero-actions" className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"><a data-testid="hero-whatsapp-button" href={whatsappUrl()} target="_blank" rel="noopener noreferrer" className={cn(buttonVariants({ size: "lg" }), "group gap-2 rounded-full bg-[#2d6a4f] px-6 text-white shadow-[0_16px_30px_-16px_#2d6a4f] hover:bg-[#24583f]")}>Agendar conversa via WhatsApp<ArrowUpRight size={18} className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" /></a><a data-testid="hero-about-link" href="#sobre" className="group inline-flex items-center justify-center gap-2 rounded-full px-5 py-3 text-sm font-bold text-[#2d6a4f] transition-colors duration-300 hover:bg-[#eef6ef]">Conhecer o trabalho <ArrowDownRight size={16} className="transition-transform duration-300 group-hover:translate-y-1" /></a></div>
         <div data-testid="hero-credentials" className="mt-10 flex flex-wrap gap-x-6 gap-y-3 border-t border-[#dce8df] pt-5 text-xs font-semibold text-[#64748b]"><span data-testid="hero-location"><MapPin size={14} className="mr-1 inline text-[#e07a5f]" /> Jundiaí e região</span><span data-testid="hero-cref"><Check size={14} className="mr-1 inline text-[#52b788]" /> CREF 091220-G/SP</span></div>
       </motion.div>
