@@ -1,4 +1,4 @@
-import { useMemo, useState, type ReactElement } from "react";
+import { useEffect, useMemo, useState, type ReactElement } from "react";
 import { motion } from "motion/react";
 import {
   ArrowDownRight,
@@ -231,10 +231,26 @@ function ContactSection(): ReactElement {
 }
 
 function SiteFooter(): ReactElement {
-  return <footer data-testid="site-footer" className="bg-[#1e4e3a] px-5 py-8 text-white/70 lg:px-10"><div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left"><div><p data-testid="footer-brand" className="font-heading text-lg font-extrabold text-white">EdMovimento</p><p data-testid="footer-tagline" className="mt-1 text-xs">A vida em movimento.</p></div><div className="flex items-center gap-5"><p data-testid="footer-registration" className="text-xs">Vinicius Corrêa Tafarelo · CREF 091220-G/SP</p><a data-testid="footer-privacy-link" href="/privacidade/" className="text-xs underline underline-offset-4 transition-colors duration-300 hover:text-white">Política de privacidade</a>{instagramUrl ? <a data-testid="footer-instagram-link" href={instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram EdMovimento" className="rounded-full p-2 transition-colors duration-300 hover:bg-white/10 hover:text-white"><Instagram size={18} /></a> : null}</div></div></footer>;
+  return <footer data-testid="site-footer" className="bg-[#1e4e3a] px-5 py-8 text-white/70 lg:px-10"><div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left"><div><p data-testid="footer-brand" className="font-heading text-lg font-extrabold text-white">EdMovimento</p><p data-testid="footer-tagline" className="mt-1 text-xs">A vida em movimento.</p></div><div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2"><p data-testid="footer-registration" className="text-xs">Vinicius Corrêa Tafarelo · CREF 091220-G/SP</p><a data-testid="footer-privacy-link" href="/privacidade/" className="text-xs underline underline-offset-4 transition-colors duration-300 hover:text-white">Política de privacidade</a>{instagramUrl ? <a data-testid="footer-instagram-link" href={instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram EdMovimento" className="inline-flex shrink-0 items-center gap-2 rounded-full px-3 py-2 text-xs transition-colors duration-300 hover:bg-white/10 hover:text-white"><Instagram size={18} /><span>@edmovimento</span></a> : null}</div></div></footer>;
 }
 
-function FloatingWhatsapp(): ReactElement {
+function FloatingWhatsapp(): ReactElement | null {
+  const [hidden, setHidden] = useState<boolean>(false);
+
+  // Esconde o botão quando o rodapé aparece, para ele não tampar os links de lá.
+  useEffect(() => {
+    const footer = document.querySelector('[data-testid="site-footer"]');
+    if (!footer || !("IntersectionObserver" in window)) return;
+    const observer = new IntersectionObserver(
+      (entries) => setHidden(entries.some((entry) => entry.isIntersecting)),
+      { threshold: 0.01 },
+    );
+    observer.observe(footer);
+    return () => observer.disconnect();
+  }, []);
+
+  if (hidden) return null;
+
   return <a data-testid="floating-whatsapp-button" href={whatsappUrl()} target="_blank" rel="noopener noreferrer" aria-label="Fale diretamente pelo WhatsApp" className="whatsapp-float group fixed bottom-5 right-5 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-[#25d366] text-[#0c3b25] shadow-[0_12px_30px_-10px_#0c3b25] transition-transform duration-300 hover:scale-105 sm:bottom-7 sm:right-7"><MessageCircle size={25} /><span data-testid="floating-whatsapp-tooltip" className="pointer-events-none absolute right-[calc(100%+12px)] hidden whitespace-nowrap rounded-full bg-[#1e293b] px-3 py-2 text-xs font-bold text-white opacity-0 transition-opacity duration-300 group-hover:opacity-100 sm:block">Fale diretamente com o Prof. Vinicius</span></a>;
 }
 
