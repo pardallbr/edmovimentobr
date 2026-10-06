@@ -32,6 +32,8 @@ const heroImage =
   "https://static.wixstatic.com/media/ca1e43_a8c3b88b760647bebec80ffb81b5301f~mv2.jpg/v1/fill/w_1200,h_620,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/educacao-do-movimento.jpg";
 const aboutImage =
   "https://static.wixstatic.com/media/ca1e43_40d046b5c59142c5a3add3987efd7322~mv2.jpg/v1/crop/x_0,y_187,w_3265,h_3601/fill/w_700,h_770,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/_MG_0051.jpg";
+// Cole aqui o link do Instagram (ex.: "https://www.instagram.com/seuperfil/"). Vazio = o ícone fica escondido.
+const instagramUrl: string = "https://www.instagram.com/edmovimento/";
 const googleProfileUrl =
   "https://www.google.com/maps/place/Psicomotricidade+-+Educa%C3%A7%C3%A3o+do+movimento/data=!4m2!3m1!1s0x0:0x8b07a5f92757dc0e";
 
@@ -231,7 +233,7 @@ function ContactSection(): ReactElement {
 }
 
 function SiteFooter(): ReactElement {
-  return <footer data-testid="site-footer" className="bg-[#1e4e3a] px-5 py-8 text-white/70 lg:px-10"><div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left"><div><p data-testid="footer-brand" className="font-heading text-lg font-extrabold text-white">EdMovimento</p><p data-testid="footer-tagline" className="mt-1 text-xs">A vida em movimento.</p></div><div className="flex items-center gap-5"><p data-testid="footer-registration" className="text-xs">Vinicius Corrêa Tafarelo · CREF 091220-G/SP</p><a data-testid="footer-instagram-link" href="#inicio" aria-label="Instagram EdMovimento" className="rounded-full p-2 transition-colors duration-300 hover:bg-white/10 hover:text-white"><Instagram size={18} /></a></div></div></footer>;
+  return <footer data-testid="site-footer" className="bg-[#1e4e3a] px-5 py-8 text-white/70 lg:px-10"><div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 text-center sm:flex-row sm:text-left"><div><p data-testid="footer-brand" className="font-heading text-lg font-extrabold text-white">EdMovimento</p><p data-testid="footer-tagline" className="mt-1 text-xs">A vida em movimento.</p></div><div className="flex items-center gap-5"><p data-testid="footer-registration" className="text-xs">Vinicius Corrêa Tafarelo · CREF 091220-G/SP</p><a data-testid="footer-privacy-link" href="/privacidade/" className="text-xs underline underline-offset-4 transition-colors duration-300 hover:text-white">Política de privacidade</a>{instagramUrl ? <a data-testid="footer-instagram-link" href={instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram EdMovimento" className="rounded-full p-2 transition-colors duration-300 hover:bg-white/10 hover:text-white"><Instagram size={18} /></a> : null}</div></div></footer>;
 }
 
 function FloatingWhatsapp(): ReactElement {
