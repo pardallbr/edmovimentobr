@@ -16,7 +16,7 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: data.error_message || "Erro na Google API" });
     }
 
-    // Cache na rede da Vercel durante 24 horas (86400 segundos) para evitar custos de quota
+    // Cache na rede da Vercel durante 24 horas (86400 segundos)
     res.setHeader("Cache-Control", "s-maxage=86400, stale-while-revalidate");
 
     return res.status(200).json({
