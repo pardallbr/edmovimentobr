@@ -61,21 +61,21 @@ const specialties = [
   },
   {
     number: "05",
-    title: "ABA aplicada ao autismo",
-    detail: "Pós-graduação · 780h",
-    tone: "lavender",
-  },
-  {
-    number: "06",
     title: "Docência no Ensino Superior e Psicomotricidade",
     detail: "Pós-graduação · 720h",
     tone: "sage",
   },
   {
-    number: "07",
+    number: "06",
     title: "Psicomotricidade e Educação Inclusiva",
     detail: "Pós-graduação · 720h",
     tone: "honey",
+  },
+    {
+    number: "07",
+    title: "ABA aplicada ao autismo",
+    detail: "Pós-graduação · 780h",
+    tone: "lavender",
   },
 ] as const;
 
