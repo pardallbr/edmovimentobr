@@ -65,6 +65,12 @@ const specialties = [
     detail: "Pós-graduação · 780h",
     tone: "lavender",
   },
+  {
+    number: "06",
+    title: "Docência no Ensino Superior e Psicomotricidade",
+    detail: "Pós-graduação · 720h",
+    tone: "sage",
+  },
 ] as const;
 
 const approachItems = [
@@ -219,7 +225,7 @@ function TrustStrip(): ReactElement {
     <section data-testid="trust-strip" className="border-y border-[#dce8df] bg-[#f2f8f3]">
       <div className="mx-auto grid max-w-7xl grid-cols-2 divide-x divide-[#dce8df] px-5 sm:grid-cols-4 lg:px-10">
         <div data-testid="trust-stat-specialties" className="px-3 py-7 text-center sm:py-8">
-          <strong className="block font-heading text-3xl font-extrabold text-[#2d6a4f]">+5</strong>
+          <strong className="block font-heading text-3xl font-extrabold text-[#2d6a4f]">+6</strong>
           <span data-testid="trust-stat-specialties-label" className="mt-1 block text-xs font-semibold text-[#64748b] sm:text-sm">pós-graduações</span>
         </div>
         <div data-testid="trust-stat-experience" className="border-y border-[#dce8df] px-3 py-7 text-center sm:border-y-0 sm:py-8">
